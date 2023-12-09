@@ -1,9 +1,9 @@
 package com.example.valorantcomposeapp.domain.model
 
-data class Agent(
+data class ModelAgent(
     val displayName : String,
     val description : String,
     val displayIcon : String,
     val portrait : String,
-    val abilities : List<Ability>
+    val abilities : List<ModelAbility>
 )

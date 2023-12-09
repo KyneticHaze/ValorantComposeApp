@@ -1,6 +1,6 @@
 package com.example.valorantcomposeapp.domain.model
 
-data class Ability(
+data class ModelAbility(
     val abilityNum : String,
     val abilityName : String,
     val abilityDesc : String,
