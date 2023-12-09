@@ -59,10 +59,8 @@ val coilVersion = "2.5.0"
 
 dependencies {
 
-    // Moshi
-    implementation("com.squareup.moshi:moshi:$moshiVersion")
-    implementation("com.squareup.retrofit2:converter-moshi:$retrofitVersion")
-    ksp("com.squareup.moshi:moshi-kotlin-codegen:1.15.0")
+    // gson - converter
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
     // Retrofit
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
