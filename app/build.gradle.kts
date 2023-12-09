@@ -51,10 +51,11 @@ android {
     }
 }
 
-val moshiVersion = "1.14.0"
+val moshiVersion = "1.15.0"
 val retrofitVersion = "2.9.0"
 val hiltVersion = "2.49"
 val navVersion = "2.7.5"
+val coilVersion = "2.5.0"
 
 dependencies {
 
@@ -72,6 +73,10 @@ dependencies {
 
     // Compose - Navigating
     implementation("androidx.navigation:navigation-compose:$navVersion")
+    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
+
+    // Coil
+    implementation("io.coil-kt:coil-compose:$coilVersion")
 
 
     implementation("androidx.core:core-ktx:1.12.0")
