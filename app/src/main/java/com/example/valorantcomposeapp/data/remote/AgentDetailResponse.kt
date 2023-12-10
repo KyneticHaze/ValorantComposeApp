@@ -1,11 +1,10 @@
 package com.example.valorantcomposeapp.data.remote
 
-
 import com.google.gson.annotations.SerializedName
 
-data class Agents(
+data class AgentDetailResponse(
     @SerializedName("data")
-    val `data`: List<Agent>,
+    val data: AgentDTO?,
     @SerializedName("status")
-    val status: Int
+    val status: Int?
 )
