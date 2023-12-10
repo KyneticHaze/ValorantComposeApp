@@ -1,11 +1,11 @@
 package com.example.valorantcomposeapp.domain.repository
 
-import com.example.valorantcomposeapp.common.Resource
-import com.example.valorantcomposeapp.domain.model.ModelAgent
+import com.example.valorantcomposeapp.data.remote.AgentDetailResponse
+import com.example.valorantcomposeapp.data.remote.AgentsResponse
 
 interface AgentRepository {
 
-    suspend fun getAgents() : List<ModelAgent>
+    suspend fun getAgents() : AgentsResponse
 
-    suspend fun getAgentByUUID(uuid : String) : ModelAgent
+    suspend fun getAgentByUUID(uuid : String) : AgentDetailResponse
 }

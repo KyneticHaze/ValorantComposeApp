@@ -1,18 +1,21 @@
 package com.example.valorantcomposeapp.data.service
 
-import com.example.valorantcomposeapp.data.remote.Agent
-import com.example.valorantcomposeapp.data.remote.AgentsDTO
+import com.example.valorantcomposeapp.data.remote.AgentDetailResponse
+import com.example.valorantcomposeapp.data.remote.AgentsResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface AgentsAPI {
 
-    @GET("agents")
-    suspend fun getAllAgents() : AgentsDTO
+    @GET("v1/agents/?isPlayableCharacter=true")
+    suspend fun getAllAgents() : AgentsResponse
 
-    @GET("agents/{uuid}")
+    @GET("v1/agents/{agentUuid}")
     suspend fun getAgentByUUID(
-        @Query("uuid") uuid : String
-    ) : Agent
+        @Query("agentUuid") uuid : String
+    ) : AgentDetailResponse
 
+    companion object {
+        const val BASE_URL = "https://valorant-api.com/"
+    }
 }
