@@ -5,5 +5,6 @@ data class ModelAgent(
     val description : String,
     val displayIcon : String,
     val portrait : String,
+    val role : ModelRole,
     val abilities : List<ModelAbility>
 )

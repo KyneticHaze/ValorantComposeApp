@@ -1,19 +1,17 @@
 package com.example.valorantcomposeapp.data.remote
 
 
-import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
+import com.google.gson.annotations.SerializedName
 
-@JsonClass(generateAdapter = true)
 data class Role(
-    @Json(name = "assetPath")
+    @SerializedName("assetPath")
     val assetPath: String,
-    @Json(name = "description")
+    @SerializedName("description")
     val description: String,
-    @Json(name = "displayIcon")
+    @SerializedName("displayIcon")
     val displayIcon: String,
-    @Json(name = "displayName")
+    @SerializedName("displayName")
     val displayName: String,
-    @Json(name = "uuid")
+    @SerializedName("uuid")
     val uuid: String
 )

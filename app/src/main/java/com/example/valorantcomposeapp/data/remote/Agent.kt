@@ -1,53 +1,51 @@
 package com.example.valorantcomposeapp.data.remote
 
 
-import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
+import com.google.gson.annotations.SerializedName
 
-@JsonClass(generateAdapter = true)
 data class Agent(
-    @Json(name = "abilities")
+    @SerializedName("abilities")
     val abilities: List<Ability>,
-    @Json(name = "assetPath")
+    @SerializedName("assetPath")
     val assetPath: String,
-    @Json(name = "background")
+    @SerializedName("background")
     val background: String,
-    @Json(name = "backgroundGradientColors")
+    @SerializedName("backgroundGradientColors")
     val backgroundGradientColors: List<String>,
-    @Json(name = "bustPortrait")
+    @SerializedName("bustPortrait")
     val bustPortrait: String,
-    @Json(name = "characterTags")
+    @SerializedName("characterTags")
     val characterTags: List<String>,
-    @Json(name = "description")
+    @SerializedName("description")
     val description: String,
-    @Json(name = "developerName")
+    @SerializedName("developerName")
     val developerName: String,
-    @Json(name = "displayIcon")
+    @SerializedName("displayIcon")
     val displayIcon: String,
-    @Json(name = "displayIconSmall")
+    @SerializedName("displayIconSmall")
     val displayIconSmall: String,
-    @Json(name = "displayName")
+    @SerializedName("displayName")
     val displayName: String,
-    @Json(name = "fullPortrait")
+    @SerializedName("fullPortrait")
     val fullPortrait: String,
-    @Json(name = "fullPortraitV2")
+    @SerializedName("fullPortraitV2")
     val fullPortraitV2: String,
-    @Json(name = "isAvailableForTest")
+    @SerializedName("isAvailableForTest")
     val isAvailableForTest: Boolean,
-    @Json(name = "isBaseContent")
+    @SerializedName("isBaseContent")
     val isBaseContent: Boolean,
-    @Json(name = "isFullPortraitRightFacing")
+    @SerializedName("isFullPortraitRightFacing")
     val isFullPortraitRightFacing: Boolean,
-    @Json(name = "isPlayableCharacter")
+    @SerializedName("isPlayableCharacter")
     val isPlayableCharacter: Boolean,
-    @Json(name = "killfeedPortrait")
-    val killFeedPortrait: String,
-    @Json(name = "recruitmentData")
+    @SerializedName("killfeedPortrait")
+    val killfeedPortrait: String,
+    @SerializedName("recruitmentData")
     val recruitmentData: RecruitmentData,
-    @Json(name = "role")
+    @SerializedName("role")
     val role: Role,
-    @Json(name = "uuid")
+    @SerializedName("uuid")
     val uuid: String,
-    @Json(name = "voiceLine")
+    @SerializedName("voiceLine")
     val voiceLine: Any
 )

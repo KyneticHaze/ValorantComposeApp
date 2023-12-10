@@ -1,23 +1,21 @@
 package com.example.valorantcomposeapp.data.remote
 
 
-import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
+import com.google.gson.annotations.SerializedName
 
-@JsonClass(generateAdapter = true)
 data class RecruitmentData(
-    @Json(name = "counterId")
+    @SerializedName("counterId")
     val counterId: String,
-    @Json(name = "endDate")
+    @SerializedName("endDate")
     val endDate: String,
-    @Json(name = "levelVpCostOverride")
+    @SerializedName("levelVpCostOverride")
     val levelVpCostOverride: Int,
-    @Json(name = "milestoneId")
+    @SerializedName("milestoneId")
     val milestoneId: String,
-    @Json(name = "milestoneThreshold")
+    @SerializedName("milestoneThreshold")
     val milestoneThreshold: Int,
-    @Json(name = "startDate")
+    @SerializedName("startDate")
     val startDate: String,
-    @Json(name = "useLevelVpCostOverride")
+    @SerializedName("useLevelVpCostOverride")
     val useLevelVpCostOverride: Boolean
 )
