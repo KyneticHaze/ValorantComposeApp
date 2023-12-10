@@ -5,17 +5,17 @@ import com.google.gson.annotations.SerializedName
 
 data class RecruitmentData(
     @SerializedName("counterId")
-    val counterId: String,
+    val counterId: String?,
     @SerializedName("endDate")
-    val endDate: String,
+    val endDate: String?,
     @SerializedName("levelVpCostOverride")
-    val levelVpCostOverride: Int,
+    val levelVpCostOverride: Int?,
     @SerializedName("milestoneId")
-    val milestoneId: String,
+    val milestoneId: String?,
     @SerializedName("milestoneThreshold")
-    val milestoneThreshold: Int,
+    val milestoneThreshold: Int?,
     @SerializedName("startDate")
-    val startDate: String,
+    val startDate: String?,
     @SerializedName("useLevelVpCostOverride")
-    val useLevelVpCostOverride: Boolean
+    val useLevelVpCostOverride: Boolean?
 )
