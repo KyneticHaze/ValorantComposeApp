@@ -7,6 +7,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.valorantcomposeapp.common.Params
 import com.example.valorantcomposeapp.common.Resource
 import com.example.valorantcomposeapp.domain.use_case.GetAgentDetailUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -25,7 +26,7 @@ class AgentDetailViewModel @Inject constructor(
     val agentState : State<AgentDetailState> = _agentState
 
     init {
-        savedStateHandle.get<String>("agentUuid")?.let { agentId ->
+        savedStateHandle.get<String>(Params.PARAM_AGENT_ID)?.let { agentId ->
             getAgentDetail(agentId)
         }
     }
@@ -37,9 +38,7 @@ class AgentDetailViewModel @Inject constructor(
                     _agentState.value = _agentState.value.copy(isLoading = true)
                 }
                 is Resource.Success -> {
-                    result.data?.let {
-                        _agentState.value = _agentState.value.copy(agent = it)
-                    }
+                    _agentState.value = _agentState.value.copy(agent = result.data)
                 }
                 is Resource.Error -> {
                     _agentState.value = _agentState.value.copy(error = result.errorMessage?: "")

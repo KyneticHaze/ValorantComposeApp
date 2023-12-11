@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -36,8 +37,8 @@ fun AgentItem(
     Card(
         modifier = Modifier
             .clickable { navigate(agent.uuid) }
-            .padding(12.dp)
-            .background(Color.LightGray)
+            .padding(12.dp),
+        colors = CardDefaults.cardColors(containerColor = Color.LightGray)
     ) {
         Box {
             AsyncImage(
@@ -55,12 +56,14 @@ fun AgentItem(
                 textAlign = TextAlign.Center,
                 modifier = Modifier
                     .align(Alignment.BottomCenter)
-                    .background(brush = Brush.verticalGradient(
-                        listOf(
-                            Color.Transparent,
-                            Color.Gray
+                    .background(
+                        brush = Brush.verticalGradient(
+                            listOf(
+                                Color.Transparent,
+                                Color.Gray
+                            )
                         )
-                    ))
+                    )
                     .padding(4.dp)
                     .fillMaxWidth()
             )
