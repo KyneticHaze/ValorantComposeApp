@@ -1,6 +1,6 @@
 package com.example.valorantcomposeapp.di
 
-import com.example.valorantcomposeapp.data.service.AgentsAPI
+import com.example.valorantcomposeapp.data.service.ValorantAPI
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,11 +16,11 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideAgentsAPI() : AgentsAPI {
+    fun provideAgentsAPI() : ValorantAPI {
         return Retrofit.Builder()
-            .baseUrl(AgentsAPI.BASE_URL)
+            .baseUrl(ValorantAPI.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-            .create(AgentsAPI::class.java)
+            .create(ValorantAPI::class.java)
     }
 }

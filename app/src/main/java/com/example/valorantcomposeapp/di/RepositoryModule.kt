@@ -1,8 +1,8 @@
 package com.example.valorantcomposeapp.di
 
-import com.example.valorantcomposeapp.data.repository.AgentRepositoryImpl
-import com.example.valorantcomposeapp.data.service.AgentsAPI
-import com.example.valorantcomposeapp.domain.repository.AgentRepository
+import com.example.valorantcomposeapp.data.repository.ValorantRepositoryImpl
+import com.example.valorantcomposeapp.data.service.ValorantAPI
+import com.example.valorantcomposeapp.domain.repository.ValorantRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,7 +15,7 @@ object RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideRepository(api: AgentsAPI): AgentRepository {
-        return AgentRepositoryImpl(api)
+    fun provideRepository(api: ValorantAPI): ValorantRepository {
+        return ValorantRepositoryImpl(api)
     }
 }
