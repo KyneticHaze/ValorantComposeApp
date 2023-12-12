@@ -12,7 +12,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.valorantcomposeapp.common.Routes
-import com.example.valorantcomposeapp.presentation.all_agents.AgentsScreen
+import com.example.valorantcomposeapp.presentation.agents.all_agents.AgentsScreen
 import com.example.valorantcomposeapp.navigation.MainNavigationBar
 import com.example.valorantcomposeapp.navigation.NavGraphComponent
 
