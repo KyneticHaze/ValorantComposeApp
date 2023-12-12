@@ -1,4 +1,4 @@
-package com.example.valorantcomposeapp.presentation.all_agents.components
+package com.example.valorantcomposeapp.presentation.agents.all_agents.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable

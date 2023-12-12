@@ -1,4 +1,4 @@
-package com.example.valorantcomposeapp.data.remote
+package com.example.valorantcomposeapp.data.dto.agents
 
 
 import com.example.valorantcomposeapp.domain.model.Agent

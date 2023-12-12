@@ -1,4 +1,4 @@
-package com.example.valorantcomposeapp.presentation.all_agents
+package com.example.valorantcomposeapp.presentation.agents.all_agents
 
 import android.os.Build
 import androidx.annotation.RequiresExtension
@@ -7,8 +7,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.valorantcomposeapp.common.Resource
-import com.example.valorantcomposeapp.domain.model.Agent
-import com.example.valorantcomposeapp.domain.use_case.GetAgentsUseCase
+import com.example.valorantcomposeapp.domain.use_case.agents.GetAgentsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -16,7 +15,7 @@ import javax.inject.Inject
 
 @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
 @HiltViewModel
-class GetAgentsViewModel @Inject constructor(
+class AgentsViewModel @Inject constructor(
     private val getAgentsUseCase: GetAgentsUseCase
 ) : ViewModel() {
 

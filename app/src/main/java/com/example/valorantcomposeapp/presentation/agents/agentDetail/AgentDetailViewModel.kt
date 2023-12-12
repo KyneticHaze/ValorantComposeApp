@@ -1,4 +1,4 @@
-package com.example.valorantcomposeapp.presentation.agentDetail
+package com.example.valorantcomposeapp.presentation.agents.agentDetail
 
 import android.os.Build
 import androidx.annotation.RequiresExtension
@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.valorantcomposeapp.common.Params
 import com.example.valorantcomposeapp.common.Resource
-import com.example.valorantcomposeapp.domain.use_case.GetAgentDetailUseCase
+import com.example.valorantcomposeapp.domain.use_case.agents.GetAgentDetailUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach

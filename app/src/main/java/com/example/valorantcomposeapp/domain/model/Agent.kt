@@ -1,7 +1,7 @@
 package com.example.valorantcomposeapp.domain.model
 
-import com.example.valorantcomposeapp.data.remote.Ability
-import com.example.valorantcomposeapp.data.remote.Role
+import com.example.valorantcomposeapp.data.dto.agents.Ability
+import com.example.valorantcomposeapp.data.dto.agents.Role
 
 data class Agent(
     val abilities : List<Ability>,

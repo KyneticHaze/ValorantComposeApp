@@ -1,4 +1,4 @@
-package com.example.valorantcomposeapp.presentation.agentDetail.components
+package com.example.valorantcomposeapp.presentation.agents.agentDetail.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -17,7 +17,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.example.valorantcomposeapp.data.remote.Ability
+import com.example.valorantcomposeapp.data.dto.agents.Ability
 import com.example.valorantcomposeapp.presentation.ui.theme.cupidEye
 import com.example.valorantcomposeapp.presentation.ui.theme.wildApothecary
 

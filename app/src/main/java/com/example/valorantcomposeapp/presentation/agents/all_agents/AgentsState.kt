@@ -1,4 +1,4 @@
-package com.example.valorantcomposeapp.presentation.all_agents
+package com.example.valorantcomposeapp.presentation.agents.all_agents
 
 import com.example.valorantcomposeapp.domain.model.Agent
 
