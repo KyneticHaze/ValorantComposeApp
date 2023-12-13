@@ -38,11 +38,12 @@ data class MapDTO(
 )
 
 fun MapDTO.toMap() : Map = Map(
-    uuid = uuid,
-    displayName = displayName,
-    description = narrativeDescription,
-    coordinates = coordinates,
-    displayMap = displayIcon,
-    displayLittleMap = listViewIcon,
-    mapImage = splash,
+    uuid = uuid.orEmpty(),
+    displayName = displayName.orEmpty(),
+    description = narrativeDescription.orEmpty(),
+    coordinates = coordinates.orEmpty(),
+    displayMap = displayIcon.orEmpty(),
+    displayLittleMap = listViewIcon.orEmpty(),
+    mapImage = splash.orEmpty(),
+    mapSites = tacticalDescription.orEmpty()
 )
