@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -21,10 +23,11 @@ import com.example.valorantcomposeapp.navigation.NavGraphComponent
 fun ValorantApp() {
 
     val navController = rememberNavController()
+    val bottomBarState = rememberSaveable { mutableStateOf(true) }
 
     Scaffold(
         bottomBar = {
-            MainNavigationBar(navController)
+            MainNavigationBar(navController, bottomBarState)
         }
     ) { paddingValues ->
         NavGraphComponent(navController = navController, paddingValues)
