@@ -76,6 +76,9 @@ dependencies {
     // Coil
     implementation("io.coil-kt:coil-compose:$coilVersion")
 
+    // Compose in Pager
+    implementation("com.google.accompanist:accompanist-pager:0.26.1-alpha")
+
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
