@@ -10,8 +10,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.valorantcomposeapp.common.Routes
-import com.example.valorantcomposeapp.presentation.agentDetail.AgentDetailScreen
-import com.example.valorantcomposeapp.presentation.all_agents.AgentsScreen
+import com.example.valorantcomposeapp.presentation.agents.agentDetail.AgentDetailScreen
+import com.example.valorantcomposeapp.presentation.agents.all_agents.AgentsScreen
+import com.example.valorantcomposeapp.presentation.maps.all_maps.MapsScreen
+import com.example.valorantcomposeapp.presentation.maps.map_detail.MapDetailScreen
 
 @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
 @Composable
@@ -26,13 +28,24 @@ fun NavGraphComponent(
     ) {
         composable(Routes.Agents.route) {
             AgentsScreen(
-                navigateToDetail = {
-                    navController.navigate("${Routes.Maps.route}/$it")
+                navigateToAgentDetail = {
+                    navController.navigate("${Routes.AgentDetail.route}/$it")
                 }
             )
         }
-        composable(route = "${Routes.Maps.route}/{agentUuid}") {
+        composable(route = "${Routes.AgentDetail.route}/{agentUuid}") {
             AgentDetailScreen()
+        }
+
+        composable(route = Routes.Maps.route) {
+            MapsScreen(
+                navigateToMapDetail = {
+                    navController.navigate("${Routes.MapDetail.route}/$it")
+                }
+            )
+        }
+        composable(route = "${Routes.MapDetail.route}/{mapUuid}") {
+            MapDetailScreen()
         }
     }
 }
