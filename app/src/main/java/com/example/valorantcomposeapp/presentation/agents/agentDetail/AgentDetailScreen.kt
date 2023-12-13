@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
-import com.example.valorantcomposeapp.presentation.agents.agentDetail.components.AbilityItem
+import com.example.valorantcomposeapp.presentation.agents.agentDetail.components.AgentAbilityItem
 import com.example.valorantcomposeapp.presentation.ui.theme.cupidEye
 import com.example.valorantcomposeapp.presentation.ui.theme.radiant
 import com.example.valorantcomposeapp.presentation.ui.theme.wildApothecary
@@ -41,6 +41,7 @@ fun AgentDetailScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .background(cupidEye)
             .verticalScroll(rememberScrollState()),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -106,18 +107,9 @@ fun AgentDetailScreen(
             )
             Spacer(modifier = Modifier.size(24.dp))
             Text(text = "Abilities", style = MaterialTheme.typography.headlineMedium)
-            Spacer(modifier = Modifier.size(6.dp))
-            Column(
-                verticalArrangement = Arrangement.spacedBy(10.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier.padding(10.dp)
-            ) {
-                // Lazy column doesn't work!
-                AbilityItem(ability = agent.abilities[0])
-                AbilityItem(ability = agent.abilities[1])
-                AbilityItem(ability = agent.abilities[2])
-                AbilityItem(ability = agent.abilities[3])
-            }
+            Spacer(modifier = Modifier.size(10.dp))
+            
+            AgentAbilityItem(abilities = agent.abilities)
         }
     }
 }

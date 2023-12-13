@@ -2,6 +2,7 @@ package com.example.valorantcomposeapp.presentation.agents.all_agents
 
 import android.os.Build
 import androidx.annotation.RequiresExtension
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -17,6 +18,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.valorantcomposeapp.common.LoadingBar
 import com.example.valorantcomposeapp.common.TextError
 import com.example.valorantcomposeapp.presentation.agents.all_agents.components.AgentItem
+import com.example.valorantcomposeapp.presentation.ui.theme.cupidEye
 
 @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
 @Composable
@@ -31,6 +33,7 @@ fun AgentsScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(top = 12.dp)
+                .background(cupidEye)
         ) {
             LazyVerticalGrid(
                 columns = GridCells.Fixed(3),
