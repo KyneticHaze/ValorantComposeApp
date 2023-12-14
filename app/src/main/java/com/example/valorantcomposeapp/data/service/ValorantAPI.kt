@@ -13,7 +13,7 @@ interface ValorantAPI {
     suspend fun getAllAgents() : AgentsResponse
 
     @GET("v1/agents/{agentUuid}")
-    suspend fun getAgentByUUID(
+    suspend fun getAgentByUuid(
         @Path("agentUuid") uuid : String
     ) : AgentDetailResponse
 
@@ -21,9 +21,25 @@ interface ValorantAPI {
     suspend fun getAllMaps() : MapsResponse
 
     @GET("v1/maps/{mapUuid}")
-    suspend fun getMapByUUID(
+    suspend fun getMapByUuid(
         @Path("mapUuid") uuid : String
     ) : MapDetailResponse
+
+    @GET("v1/weapons")
+    suspend fun getAllWeapons()
+
+    @GET("v1/weapons/{weaponUuid}")
+    suspend fun getWeaponByUuid(
+        @Path("weaponUuid") weaponUuid : String
+    )
+
+    @GET("v1/weapons/skins")
+    suspend fun getAllWeaponSkins()
+
+    @GET("v1/weapons/skins/{weaponSkinUuid}")
+    suspend fun getWeaponSkinByUuid(
+        @Path("weaponSkinUuid") weaponSkinUuid : String
+    )
 
     companion object {
         const val BASE_URL = "https://valorant-api.com/"
