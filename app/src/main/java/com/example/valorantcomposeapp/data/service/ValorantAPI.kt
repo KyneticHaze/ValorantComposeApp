@@ -4,6 +4,8 @@ import com.example.valorantcomposeapp.data.dto.agents.AgentDetailResponse
 import com.example.valorantcomposeapp.data.dto.agents.AgentsResponse
 import com.example.valorantcomposeapp.data.dto.maps.MapDetailResponse
 import com.example.valorantcomposeapp.data.dto.maps.MapsResponse
+import com.example.valorantcomposeapp.data.dto.weapons.WeaponDetailResponse
+import com.example.valorantcomposeapp.data.dto.weapons.WeaponResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
 
@@ -26,20 +28,12 @@ interface ValorantAPI {
     ) : MapDetailResponse
 
     @GET("v1/weapons")
-    suspend fun getAllWeapons()
+    suspend fun getAllWeapons() : WeaponResponse
 
     @GET("v1/weapons/{weaponUuid}")
     suspend fun getWeaponByUuid(
         @Path("weaponUuid") weaponUuid : String
-    )
-
-    @GET("v1/weapons/skins")
-    suspend fun getAllWeaponSkins()
-
-    @GET("v1/weapons/skins/{weaponSkinUuid}")
-    suspend fun getWeaponSkinByUuid(
-        @Path("weaponSkinUuid") weaponSkinUuid : String
-    )
+    ) : WeaponDetailResponse
 
     companion object {
         const val BASE_URL = "https://valorant-api.com/"
