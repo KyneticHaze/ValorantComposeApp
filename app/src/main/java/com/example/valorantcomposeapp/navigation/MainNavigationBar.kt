@@ -40,7 +40,9 @@ fun MainNavigationBar(
         enter = slideInVertically(initialOffsetY = { it }),
         exit = slideOutVertically(targetOffsetY = { it })
     ) {
-        NavigationBar {
+        NavigationBar(
+            containerColor = cupidEye
+        ) {
             val navBackStackEntry by navController.currentBackStackEntryAsState()
             val currentRoute = navBackStackEntry?.destination?.route
 
@@ -70,7 +72,7 @@ fun MainNavigationBar(
                         unselectedIconColor = radiant,
                         selectedTextColor = wildApothecary,
                         unselectedTextColor = radiant,
-                        indicatorColor = cupidEye
+                        indicatorColor = Color.LightGray
                     )
                 )
             }
