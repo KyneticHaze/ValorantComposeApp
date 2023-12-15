@@ -32,5 +32,7 @@ fun WeaponDTO.toWeapon() : Weapon = Weapon(
     displayIcon = displayIcon,
     weaponMarket = shopData,
     skins = skins,
-    weaponUuid = uuid
+    weaponUuid = uuid,
+    category = category,
+    weaponStats = weaponStats
 )
