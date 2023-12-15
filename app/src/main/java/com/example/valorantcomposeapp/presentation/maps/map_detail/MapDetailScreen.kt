@@ -5,7 +5,10 @@ import androidx.annotation.RequiresExtension
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -13,6 +16,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.text.TextStyle
@@ -27,6 +32,8 @@ import com.example.valorantcomposeapp.common.TextError
 import com.example.valorantcomposeapp.presentation.ui.theme.azul
 import com.example.valorantcomposeapp.presentation.ui.theme.cupidEye
 import com.example.valorantcomposeapp.presentation.ui.theme.radiant
+import com.example.valorantcomposeapp.presentation.ui.theme.valoTertiary
+import com.example.valorantcomposeapp.presentation.ui.theme.wildApothecary
 
 @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
 @Composable
@@ -38,45 +45,48 @@ fun MapDetailScreen(
 
     Column(modifier = Modifier
         .fillMaxSize()
-        .background(radiant.copy(0.2f))
+        .background(cupidEye)
         .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
         state.mapDetail?.let { map ->
-            AsyncImage(
-                model = map.displayLittleMap,
-                contentDescription = map.description,
-                contentScale = ContentScale.Crop,
-                modifier = Modifier.size(width = 250.dp, height = 150.dp)
-            )
             Text(
-                text = map.displayName.orEmpty(), style = TextStyle(
+                text = map.displayName, style = TextStyle(
                     color = azul,
-                    fontSize = 22.sp,
-                    fontWeight = FontWeight.SemiBold,
-                    textAlign = TextAlign.Center
-                )
+                    fontSize = 28.sp,
+                    fontWeight = FontWeight.SemiBold
+                ),
+                modifier = Modifier.padding(bottom = 10.dp)
             )
+            Text(text = map.mapSites, style = TextStyle(
+                color = azul,
+                fontSize = 18.sp,
+                fontWeight = FontWeight.SemiBold
+            ))
             Text(
-                text = map.description.orEmpty(), style = TextStyle(
-                    color = cupidEye,
-                    fontSize = 14.sp,
+                text = map.description, style = TextStyle(
+                    color = azul,
+                    fontSize = 16.sp,
                     fontWeight = FontWeight.W400,
-                    textAlign = TextAlign.Justify
-                )
+                    textAlign = TextAlign.Center
+                ),
+                modifier = Modifier.padding(10.dp)
             )
             AsyncImage(
                 model = map.displayMap,
                 contentDescription = map.description,
-                modifier = Modifier.size(300.dp),
-                contentScale = ContentScale.Crop
+                modifier = Modifier
+                    .size(400.dp),
+                contentScale = ContentScale.Crop,
+                alignment = Alignment.Center,
+                colorFilter = ColorFilter.lighting(cupidEye, valoTertiary)
             )
             Text(
-                text = map.coordinates.orEmpty(), style = TextStyle(
-                    color = cupidEye,
-                    fontSize = 16.sp,
+                text = map.coordinates, style = TextStyle(
+                    color = azul,
+                    fontSize = 18.sp,
                     fontWeight = FontWeight.W500,
                     textAlign = TextAlign.Center
                 )

@@ -2,6 +2,7 @@ package com.example.valorantcomposeapp.presentation.maps.all_maps
 
 import android.os.Build
 import androidx.annotation.RequiresExtension
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -17,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.valorantcomposeapp.common.LoadingBar
 import com.example.valorantcomposeapp.common.TextError
+import com.example.valorantcomposeapp.presentation.ui.theme.cupidEye
 
 @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
 @Composable
@@ -29,7 +31,8 @@ fun MapsScreen(
 
     Box(
         modifier = Modifier
-            .fillMaxSize(),
+            .fillMaxSize()
+            .background(cupidEye),
         contentAlignment = Alignment.Center
     ) {
         LazyColumn(

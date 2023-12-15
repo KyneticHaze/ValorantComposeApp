@@ -6,10 +6,12 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.valorantcomposeapp.common.Params
 import com.example.valorantcomposeapp.common.Resource
 import com.example.valorantcomposeapp.domain.use_case.maps.GetMapUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
@@ -43,6 +45,6 @@ class MapDetailViewModel @Inject constructor(
                     _mapDetailState.value = _mapDetailState.value.copy(error = result.errorMessage ?: "")
                 }
             }
-        }
+        }.launchIn(viewModelScope)
     }
 }
