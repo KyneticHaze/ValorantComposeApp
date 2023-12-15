@@ -9,7 +9,7 @@ data class Weapon(
     val displayIcon : String?,
     val weaponMarket : ShopData?,
     val weaponStats : WeaponStats?,
-    val skins : List<Skin>?,
+    var skins : List<Skin>?,
     val category : String?,
     val weaponUuid : String?
 )
