@@ -4,6 +4,8 @@ import android.net.http.HttpException
 import android.os.Build
 import androidx.annotation.RequiresExtension
 import com.example.valorantcomposeapp.common.Resource
+import com.example.valorantcomposeapp.data.dto.weapons.Skin
+import com.example.valorantcomposeapp.data.dto.weapons.WeaponDTO
 import com.example.valorantcomposeapp.data.dto.weapons.toWeapon
 import com.example.valorantcomposeapp.domain.model.weapon.Weapon
 import com.example.valorantcomposeapp.domain.repository.ValorantRepository
@@ -19,6 +21,13 @@ class GetWeaponByIdUseCase @Inject constructor(
     operator fun invoke(weaponUuid : String) : Flow<Resource<Weapon>> = flow {
         try {
             valorantRepository.getWeaponByUuid(weaponUuid).data?.toWeapon()?.let { weapon ->
+                val visibleSkin = arrayListOf<Skin>()
+                weapon.skins?.forEach {
+                    if (it.displayIcon.isNullOrEmpty().not() && it.displayName.orEmpty().contains("Standard").not()) {
+                        visibleSkin.add(it)
+                    }
+                }
+                weapon.skins = visibleSkin
                 emit(Resource.Success(weapon))
             }
         } catch (e : HttpException) {
