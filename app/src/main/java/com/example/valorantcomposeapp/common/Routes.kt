@@ -6,5 +6,6 @@ sealed class Routes(val route : String) {
     data object Maps : Routes("maps")
     data object MapDetail : Routes("map_detail")
     data object Weapons : Routes("weapons")
+    data object WeaponsDetail : Routes("weapons_detail")
     data object Tiers : Routes("tiers")
 }
