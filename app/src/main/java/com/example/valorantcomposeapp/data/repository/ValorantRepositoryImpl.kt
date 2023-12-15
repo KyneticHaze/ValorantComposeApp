@@ -4,6 +4,7 @@ import com.example.valorantcomposeapp.data.dto.agents.AgentDetailResponse
 import com.example.valorantcomposeapp.data.dto.agents.AgentsResponse
 import com.example.valorantcomposeapp.data.dto.maps.MapDetailResponse
 import com.example.valorantcomposeapp.data.dto.maps.MapsResponse
+import com.example.valorantcomposeapp.data.dto.tiers.TierResponse
 import com.example.valorantcomposeapp.data.dto.weapons.WeaponDetailResponse
 import com.example.valorantcomposeapp.data.dto.weapons.WeaponResponse
 import com.example.valorantcomposeapp.data.service.ValorantAPI
@@ -23,4 +24,6 @@ class ValorantRepositoryImpl(
     override suspend fun getAllWeapons(): WeaponResponse = api.getAllWeapons()
 
     override suspend fun getWeaponByUuid(weaponUuid: String): WeaponDetailResponse = api.getWeaponByUuid(weaponUuid)
+
+    override suspend fun getAllTiers(): TierResponse = api.getAllTiers()
 }
