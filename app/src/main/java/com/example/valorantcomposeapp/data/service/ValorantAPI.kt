@@ -4,6 +4,7 @@ import com.example.valorantcomposeapp.data.dto.agents.AgentDetailResponse
 import com.example.valorantcomposeapp.data.dto.agents.AgentsResponse
 import com.example.valorantcomposeapp.data.dto.maps.MapDetailResponse
 import com.example.valorantcomposeapp.data.dto.maps.MapsResponse
+import com.example.valorantcomposeapp.data.dto.tiers.TierResponse
 import com.example.valorantcomposeapp.data.dto.weapons.WeaponDetailResponse
 import com.example.valorantcomposeapp.data.dto.weapons.WeaponResponse
 import retrofit2.http.GET
@@ -34,6 +35,9 @@ interface ValorantAPI {
     suspend fun getWeaponByUuid(
         @Path("weaponUuid") weaponUuid : String
     ) : WeaponDetailResponse
+
+    @GET("v1/competitivetiers")
+    suspend fun getAllTiers() : TierResponse
 
     companion object {
         const val BASE_URL = "https://valorant-api.com/"
