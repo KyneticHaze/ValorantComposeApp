@@ -4,6 +4,7 @@ import com.example.valorantcomposeapp.data.dto.agents.AgentDetailResponse
 import com.example.valorantcomposeapp.data.dto.agents.AgentsResponse
 import com.example.valorantcomposeapp.data.dto.maps.MapDetailResponse
 import com.example.valorantcomposeapp.data.dto.maps.MapsResponse
+import com.example.valorantcomposeapp.data.dto.tiers.TierResponse
 import com.example.valorantcomposeapp.data.dto.weapons.WeaponDetailResponse
 import com.example.valorantcomposeapp.data.dto.weapons.WeaponResponse
 
@@ -20,4 +21,6 @@ interface ValorantRepository {
     suspend fun getAllWeapons() : WeaponResponse
 
     suspend fun getWeaponByUuid(weaponUuid : String) : WeaponDetailResponse
+
+    suspend fun getAllTiers() : TierResponse
 }
