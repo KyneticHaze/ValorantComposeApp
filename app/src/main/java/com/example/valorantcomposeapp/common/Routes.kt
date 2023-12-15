@@ -1,6 +1,7 @@
 package com.example.valorantcomposeapp.common
 
 sealed class Routes(val route : String) {
+    data object Splash : Routes("splash")
     data object Agents : Routes("agents")
     data object AgentDetail : Routes("agent_detail")
     data object Maps : Routes("maps")
