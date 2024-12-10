@@ -1,4 +1,4 @@
-# Valorant Compose App
+# Valorant Hub
 
 > Valorant information application built using the Valorant API
 
