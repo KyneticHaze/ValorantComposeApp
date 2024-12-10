@@ -1,4 +1,4 @@
-# Valorant Hub
+# ValoStats
 
 > Valorant information application built using the Valorant API
 
