@@ -153,6 +153,5 @@ fun WeaponDetailScreen(
             Spacer(modifier = Modifier.size(16.dp))
             SkinBox(weapon.skins.orEmpty())
         }
-
     }
 }

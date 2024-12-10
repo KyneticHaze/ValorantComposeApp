@@ -14,9 +14,7 @@ import androidx.compose.ui.unit.dp
 import com.example.valorantcomposeapp.R
 
 @Composable
-fun SplashDesign(
-    alpha: Float
-) {
+fun SplashDesign(alpha: Float) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,

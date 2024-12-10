@@ -8,9 +8,8 @@ import androidx.compose.runtime.*
 import kotlinx.coroutines.delay
 
 @Composable
-fun SplashScreen(
-    navigateToAgents: () -> Unit
-) {
+fun SplashScreen(navigateToAgents: () -> Unit) {
+
     var startAnimation by remember { mutableStateOf(false) }
     val alphaAnimation =
         animateFloatAsState(
